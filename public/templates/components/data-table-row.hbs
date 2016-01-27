@@ -1,0 +1,17 @@
+ {{#each cell in row}}
+	{{#if row.edit}}
+	<div class="col-xs-3">{{input type="text" value=cell.value }}</div>
+	{{else}}
+	<div class="col-xs-3">{{cell.value}}</div>
+	{{/if}}
+ {{/each}}
+ <div class='col-xs-3'>
+	<span {{action "edit" row}} class="col-xs-3">
+		{{#if row.edit}}
+			<span class="glyphicon glyphicon-ok"></span>
+		{{else}} 
+			<span class="glyphicon glyphicon-edit"></span>
+		{{/if}}
+	</span>
+	<span {{action "delete" row}} class="glyphicon glyphicon-trash"></span>
+</div>
